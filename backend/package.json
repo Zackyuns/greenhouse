@@ -1,0 +1,28 @@
+{
+    "name": "greenhouse-iot-backend",
+    "version": "1.0.0",
+    "description": "Backend Greenhouse IoT",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "setup-auth": "node setup-auth.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.6.1",
+        "express": "^4.21.2",
+        "express-rate-limit": "^8.6.2",
+        "express-validator": "^7.3.2",
+        "helmet": "^8.3.0",
+        "jsonwebtoken": "^9.0.2",
+        "mysql2": "^3.15.4"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.10"
+    },
+    "engines": {
+        "node": "22.x"
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE
+    html><html
+    lang="id"><head><meta
+    charset="UTF-8"><meta
+    name="viewport" content="width=device-width, initial-scale=1.0"><title>Jadwal
+    | Greenhouse IoT</title><link
+    rel="stylesheet" href="css/style.css"></head><body><div
+    class="app-shell"><aside
+    class="sidebar">
+  <a class="logo-wrap" href="index.html"><img src="assets/logo.svg" alt="Greenhouse IoT"></a>
+  <nav class="nav-menu">
+    <a class="nav-item " href="index.html"><span class="nav-icon" data-icon="home" aria-hidden="true"></span><span>Dashboard</span></a>
+    <a class="nav-item " href="monitoring.html"><span class="nav-icon" data-icon="chart" aria-hidden="true"></span><span>Monitoring</span></a>
+    <a class="nav-item " href="penyiraman.html"><span class="nav-icon" data-icon="droplet" aria-hidden="true"></span><span>Penyiraman</span></a>
+    <a class="nav-item active" href="jadwal.html"><span class="nav-icon" data-icon="calendar" aria-hidden="true"></span><span>Jadwal</span></a>
+    <a class="nav-item " href="riwayat.html"><span class="nav-icon" data-icon="history" aria-hidden="true"></span><span>Riwayat</span></a>
+  </nav>
+  <div class="system-status">
+    <h4>Status Sistem</h4>
+    <div class="status-line"><span class="dot" id="sidebarStatusDot"></span><span id="sidebarDeviceStatus">Memeriksa...</span></div>
+    <div
+        class="status-date"><span class="nav-icon" data-icon="clock" aria-hidden="true"></span><div><strong
+        id="sidebarDate">--/--/----</strong><strong
+        id="sidebarClock">--:--:--</strong></div></div>
+  </div>
+</aside>
+<div
+    class="sidebar-backdrop"></div><main
+    class="main"><header
+    class="topbar"><div
+    class="topbar-left"><button
+    class="menu-toggle" aria-label="Buka menu"><span data-icon="menu" aria-hidden="true"></span></button><div
+    class="greeting"><small>Atur
+    jadwal penyiraman</small><strong>Greenhouse
+    IoT</strong></div></div><div
+    class="topbar-right"><div
+    class="user-avatar"><img
+    src="assets/icon-user.svg" alt="User Avatar"></div></div></header><section
+    class="content"><div
+    class="page-heading-row"><div><h1
+    class="page-title">Jadwal Penyiraman</h1><p
+    class="page-subtitle">Kelola waktu dan durasi penyiraman otomatis.</p></div></div><section
+    class="stats-grid three-cols"><article
+    class="mini-stat"><span
+    class="mini-icon" data-icon="calendar" aria-hidden="true"></span><div><span>Jadwal
+    Aktif</span><strong
+    id="activeScheduleCount">0</strong></div></article><article
+    class="mini-stat"><span
+    class="mini-icon" data-icon="clock" aria-hidden="true"></span><div><span>Jadwal
+    Berikutnya</span><strong
+    id="nextScheduleSummary">--:--</strong></div></article><article
+    class="mini-stat"><span
+    class="mini-icon" data-icon="droplet" aria-hidden="true"></span><div><span>Total
+    Durasi Harian</span><strong
+    id="totalDuration">0 dtk</strong></div></article></section><section
+    class="content-grid-2"><article
+    class="panel schedule-feature"><div><span
+    class="soft-label">Otomatis</span><h2>Jadwal
+    tersimpan di Cloud</h2><p>ESP32
+    mengambil jadwal secara berkala dan menjalankan relay sesuai waktu serta durasi yang ditentukan.</p></div><div
+    class="schedule-steps"><span>Database</span><b>→</b><span>ESP32</span><b>→</b><span>Relay</span><b>→</b><span>Solenoid</span>→</b><span>Tanaman</span></div></article><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Pengaturan</h2><p
+    class="panel-subtitle">Tips penyiraman terjadwal</p></div></div><div
+    class="info-list"><div
+    class="info-row"><span>Format
+    waktu</span><strong>24
+    jam</strong></div><div
+    class="info-row"><span>Minimum
+    durasi</span><strong>1
+    detik</strong></div><div
+    class="info-row"><span>Kontrol</span><strong>ESP32</strong></div></div></article></section><article class="panel full-panel">
+
+      <div class="panel-head schedule-panel-head">
+  
+          <div>
+              <h2 class="panel-title">
+                  Daftar Jadwal
+              </h2>
+  
+              <p class="panel-subtitle">
+                  Klik Edit untuk mengubah jadwal.
+              </p>
+          </div>
+  
+          <button
+              class="btn btn-primary"
+              id="addScheduleBtn"
+          >
+              + Tambah Jadwal
+          </button>
+  
+      </div>
+  
+      <div class="responsive-table">
+  
+          <table class="data-table">
+  
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>Waktu</th>
+                      <th>Durasi</th>
+                      <th>Status</th>
+                      <th>Aksi</th>
+                  </tr>
+              </thead>
+  
+              <tbody id="scheduleList">
+  
+                  <tr>
+                      <td colspan="5">
+                          Memuat jadwal...
+                      </td>
+                  </tr>
+  
+              </tbody>
+  
+          </table>
+  
+      </div>
+  
+  </article></section></main></div><div
+    class="modal" id="scheduleModal"><div
+    class="modal-content"><div
+    class="modal-head"><h3
+    id="modalTitle">Tambah Jadwal</h3><button
+    class="modal-close" id="closeModal">&times;</button></div><form
+    id="scheduleForm"><input
+    id="scheduleId" type="hidden" value=""><div
+    class="form-group"><label
+    for="time">Waktu Penyiraman</label><input
+    id="time" type="time" required></div><div
+    class="form-group"><label
+    for="duration">Durasi (detik)</label><input
+    id="duration" type="number" min="1" value="60" required></div><div
+    class="form-group" id="statusGroup" style="display:none"><label
+    for="isActive">Status Jadwal</label><select
+    id="isActive"><option
+    value="true">Aktif</option><option
+    value="false">Nonaktif</option></select></div><button
+    class="btn btn-primary form-submit" id="submitBtn" type="submit">Simpan Jadwal</button></form></div></div><script
+    src="js/config.js"></script><script src="js/icons.js"></script><script
+    src="js/auth.js"></script><script
+    src="js/layout.js"></script><script
+    src="js/jadwal.js"></script></body></html>

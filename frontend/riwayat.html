@@ -1,0 +1,86 @@
+<!DOCTYPE
+    html><html
+    lang="id"><head><meta
+    charset="UTF-8"><meta
+    name="viewport" content="width=device-width, initial-scale=1.0"><title>Riwayat
+    | Greenhouse IoT</title><link
+    rel="stylesheet" href="css/style.css"></head><body><div
+    class="app-shell"><aside
+    class="sidebar">
+  <a class="logo-wrap" href="index.html"><img src="assets/logo.svg" alt="Greenhouse IoT"></a>
+  <nav class="nav-menu">
+    <a class="nav-item " href="index.html"><span class="nav-icon" data-icon="home" aria-hidden="true"></span><span>Dashboard</span></a>
+    <a class="nav-item " href="monitoring.html"><span class="nav-icon" data-icon="chart" aria-hidden="true"></span><span>Monitoring</span></a>
+    <a class="nav-item " href="penyiraman.html"><span class="nav-icon" data-icon="droplet" aria-hidden="true"></span><span>Penyiraman</span></a>
+    <a class="nav-item " href="jadwal.html"><span class="nav-icon" data-icon="calendar" aria-hidden="true"></span><span>Jadwal</span></a>
+    <a class="nav-item active" href="riwayat.html"><span class="nav-icon" data-icon="history" aria-hidden="true"></span><span>Riwayat</span></a>
+  </nav>
+  <div class="system-status">
+    <h4>Status Sistem</h4>
+    <div class="status-line"><span class="dot" id="sidebarStatusDot"></span><span id="sidebarDeviceStatus">Memeriksa...</span></div>
+    <div
+        class="status-date"><span class="nav-icon" data-icon="clock" aria-hidden="true"></span><div><strong
+        id="sidebarDate">--/--/----</strong><strong
+        id="sidebarClock">--:--:--</strong></div></div>
+  </div>
+</aside>
+<div
+    class="sidebar-backdrop"></div><main
+    class="main"><header
+    class="topbar"><div
+    class="topbar-left"><button
+    class="menu-toggle" aria-label="Buka menu"><span data-icon="menu" aria-hidden="true"></span></button><div
+    class="greeting"><small>Aktivitas
+    penyiraman</small><strong>Greenhouse
+    IoT</strong></div></div><div
+    class="topbar-right"><div
+    class="user-avatar"><img
+    src="assets/icon-user.svg" alt="User Avatar"></div></div></header><section
+    class="content"><div
+    class="page-heading-row"><div><h1
+    class="page-title">Riwayat Penyiraman</h1><p
+    class="page-subtitle">Catatan seluruh aktivitas penyiraman manual dan terjadwal.</p></div></div><section
+    class="stats-grid three-cols"><article
+    class="mini-stat"><span
+    class="mini-icon" data-icon="history" aria-hidden="true"></span><div><span>Total
+    Aktivitas</span><strong
+    id="totalHistory">0</strong></div></article><article
+    class="mini-stat"><span
+    class="mini-icon" data-icon="hand" aria-hidden="true"></span><div><span>Mode
+    Manual</span><strong
+    id="manualHistory">0</strong></div></article><article
+    class="mini-stat"><span
+    class="mini-icon" data-icon="calendar" aria-hidden="true"></span><div><span>Mode
+    Jadwal</span><strong
+    id="scheduleHistory">0</strong></div></article></section><section
+    class="content-grid-2"><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Aktivitas Terbaru</h2><p
+    class="panel-subtitle">Ringkasan penyiraman terbaru</p></div></div><div
+    class="activity-summary" id="activitySummary"><div
+    class="empty-state">Memuat data...</div></div></article><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Keterangan</h2><p
+    class="panel-subtitle">Jenis aktivitas</p></div></div><div
+    class="legend-cards"><div><span
+    class="legend-dot manual"></span><div><strong>Manual</strong><small>Dipicu
+    melalui website</small></div></div><div><span
+    class="legend-dot schedule"></span><div><strong>Jadwal</strong><small>Dipicu
+    otomatis oleh ESP32</small></div></div></div></article></section><article
+    class="panel full-panel"><div
+    class="history-toolbar"><label
+    class="select-all"><input
+    type="checkbox" id="selectAll"> Pilih Semua</label><div
+    class="history-actions"><span
+    class="selection-info" id="selectionInfo">0 dipilih</span><button
+    class="btn btn-danger" id="deleteSelected" disabled><span class="button-icon" data-icon="trash" aria-hidden="true"></span> Hapus Terpilih</button></div></div><div
+    class="responsive-table"><table
+    class="data-table"><thead><tr><th>Pilih</th><th>Waktu</th><th>Sumber</th><th>Status</th><th>Durasi</th></tr></thead><tbody
+    id="historyList"><tr><td
+    colspan="5">Memuat riwayat...</td></tr></tbody></table></div></article></section></main></div><script
+    src="js/config.js"></script><script src="js/icons.js"></script><script
+    src="js/auth.js"></script><script
+    src="js/layout.js"></script><script
+    src="js/riwayat.js"></script></body></html>

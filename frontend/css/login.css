@@ -1,0 +1,365 @@
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f4f7f5;
+
+  padding: 24px;
+}
+
+
+/* =========================================
+ CONTAINER
+========================================= */
+
+.login-container {
+  width: 100%;
+  max-width: 430px;
+}
+
+
+/* =========================================
+ CARD
+========================================= */
+
+.login-card {
+  background: #ffffff;
+
+  border: 1px solid #e4e9e6;
+
+  border-radius: 16px;
+
+  padding: 36px;
+
+  box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================
+ HEADER
+========================================= */
+
+.login-header {
+  margin-bottom: 30px;
+}
+
+
+/* BRAND */
+
+.login-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #2d704d;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.login-brand h1 {
+  margin: 0;
+
+  color: #214a34;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.login-brand p {
+  margin: 3px 0 0;
+
+  color: #7b8780;
+
+  font-size: 12px;
+}
+
+
+/* TITLE */
+
+.login-title h2 {
+  margin: 0;
+
+  color: #1f2d24;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+
+.login-title p {
+  margin: 7px 0 0;
+
+  color: #7b8780;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+ FORM
+========================================= */
+
+.login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.form-group label {
+  color: #344239;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.form-group input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dce3df;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #28352d;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+
+.form-group input::placeholder {
+  color: #a1aaa5;
+}
+
+
+.form-group input:focus {
+  border-color: #2d704d;
+
+  box-shadow:
+      0 0 0 3px rgba(45, 112, 77, 0.10);
+}
+
+
+/* =========================================
+ OPTIONS
+========================================= */
+
+.form-options {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: -2px;
+}
+
+
+.checkbox-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #66726b;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.checkbox-label input {
+  accent-color: #2d704d;
+}
+
+
+.forgot-link {
+  color: #2d704d;
+
+  font-size: 12px;
+
+  text-decoration: none;
+}
+
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+ BUTTON
+========================================= */
+
+.btn-login {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 9px;
+
+  padding: 13px 16px;
+
+  background: #2d704d;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.btn-login:hover {
+  background: #245c3e;
+}
+
+
+.btn-login:active {
+  transform: translateY(1px);
+}
+
+
+.btn-login:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+ SPINNER
+========================================= */
+
+.spinner {
+  font-size: 13px;
+}
+
+
+/* =========================================
+ ERROR
+========================================= */
+
+.error-message {
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: #fff2f2;
+
+  border: 1px solid #f2d0d0;
+
+  color: #b33b3b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+ FOOTER
+========================================= */
+
+.login-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 28px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #edf0ee;
+
+  color: #929c96;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+ RESPONSIVE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .login-page {
+      padding: 16px;
+  }
+
+  .login-card {
+      padding: 26px 22px;
+
+      border-radius: 14px;
+  }
+
+  .login-title h2 {
+      font-size: 22px;
+  }
+
+  .form-options {
+      align-items: flex-start;
+
+      flex-direction: column;
+  }
+}

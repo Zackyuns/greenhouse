@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Greenhouse IoT</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <!-- HEADER -->
+            <div class="login-header">
+
+                <div class="login-brand">
+                    <span class="brand-mark">G</span>
+
+                    <div>
+                        <h1>Greenhouse IoT</h1>
+                        <p>Sistem Monitoring Greenhouse</p>
+                    </div>
+                </div>
+
+                <div class="login-title">
+                    <h2>Selamat Datang</h2>
+
+                    <p>
+                        Silakan masuk untuk melanjutkan
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+            <form
+                id="loginForm"
+                class="login-form"
+            >
+
+                <!-- USERNAME -->
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Masukkan username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Masukkan password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- OPTIONS -->
+                <div class="form-options">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+                        <span>
+                            Ingat saya
+                        </span>
+
+                    </label>
+
+                    <a
+                        href="#"
+                        class="forgot-link"
+                    >
+                        Lupa password?
+                    </a>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="btn-login"
+                    id="loginBtn"
+                >
+
+                    <span id="loginBtnText">
+                        Masuk
+                    </span>
+
+                    <span
+                        id="loginSpinner"
+                        class="spinner"
+                        style="display: none;"
+                    >
+                        Memproses...
+                    </span>
+
+                </button>
+
+
+                <!-- ERROR -->
+                <div
+                    id="errorMessage"
+                    class="error-message"
+                    style="display: none;"
+                ></div>
+
+            </form>
+
+
+            <!-- FOOTER -->
+            <div class="login-footer">
+
+                <span>
+                    Greenhouse IoT
+                </span>
+
+                <span>
+                    v1.0.0
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>

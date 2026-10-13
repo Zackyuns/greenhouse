@@ -1,0 +1,89 @@
+<!DOCTYPE
+    html><html
+    lang="id"><head><meta
+    charset="UTF-8"><meta
+    name="viewport" content="width=device-width, initial-scale=1.0"><title>Penyiraman
+    | Greenhouse IoT</title><link
+    rel="stylesheet" href="css/style.css"></head><body><div
+    class="app-shell"><aside
+    class="sidebar">
+  <a class="logo-wrap" href="index.html"><img src="assets/logo.svg" alt="Greenhouse IoT"></a>
+  <nav class="nav-menu">
+    <a class="nav-item " href="index.html"><span class="nav-icon" data-icon="home" aria-hidden="true"></span><span>Dashboard</span></a>
+    <a class="nav-item " href="monitoring.html"><span class="nav-icon" data-icon="chart" aria-hidden="true"></span><span>Monitoring</span></a>
+    <a
+        class="nav-item active" href="penyiraman.html"><span class="nav-icon" data-icon="droplet" aria-hidden="true"></span><span>Penyiraman</span></a>
+    <a class="nav-item " href="jadwal.html"><span class="nav-icon" data-icon="calendar" aria-hidden="true"></span><span>Jadwal</span></a>
+    <a class="nav-item " href="riwayat.html"><span class="nav-icon" data-icon="history" aria-hidden="true"></span><span>Riwayat</span></a>
+  </nav>
+  <div class="system-status">
+    <h4>Status Sistem</h4>
+    <div class="status-line"><span class="dot" id="sidebarStatusDot"></span><span id="sidebarDeviceStatus">Memeriksa...</span></div>
+    <div
+        class="status-date"><span class="nav-icon" data-icon="clock" aria-hidden="true"></span><div><strong
+        id="sidebarDate">--/--/----</strong><strong
+        id="sidebarClock">--:--:--</strong></div></div>
+  </div>
+</aside>
+<div
+    class="sidebar-backdrop"></div><main
+    class="main"><header
+    class="topbar"><div
+    class="topbar-left"><button
+    class="menu-toggle" aria-label="Buka menu"><span data-icon="menu" aria-hidden="true"></span></button><div
+    class="greeting"><small>Kontrol
+    penyiraman greenhouse</small><strong>Greenhouse
+    IoT</strong></div></div><div
+    class="topbar-right"><div
+    class="user-avatar"><img
+    src="assets/icon-user.svg" alt="User Avatar"></div></div></header><section
+    class="content"><div
+    class="page-heading-row"><div><h1
+    class="page-title">Penyiraman</h1><p
+    class="page-subtitle">Kontrol manual dan lihat kondisi penyiraman saat ini.</p></div><span
+    class="live-pill disconnected" id="wateringLive">● TERPUTUS</span></div><section
+    class="watering-top-grid"><article
+    class="panel control-card modern"><div
+    class="control-top"><span
+    class="soft-label">Kontrol Manual</span><span
+    class="control-state" id="status">OFF</span></div><div
+    class="control-drop"><img
+    src="assets/icon-water.svg" alt="Pipa mengalirkan air"></div><h2
+    class="panel-title">Status Penyiraman</h2><p
+    id="description">Katup solenoid tertutup. Sistem siap digunakan.</p><div
+    class="button-row"><button
+    class="btn btn-primary" id="startBtn">Mulai Penyiraman</button><button
+    class="btn btn-danger" id="stopBtn">Hentikan</button></div></article><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Sumber Air</h2><p
+    class="panel-subtitle">Jalur distribusi</p></div></div><div
+    class="water-flow"><div
+    class="flow-node"><span class="flow-icon" data-icon="water" aria-hidden="true"></span><strong>PDAM</strong><small>Sumber
+    air</small></div><div
+    class="flow-arrow">→</div><div
+    class="flow-node"><span class="flow-icon" data-icon="valve" aria-hidden="true"></span><strong>Solenoid</strong><small>Kontrol
+    otomatis</small></div><div
+    class="flow-arrow">→</div><div
+    class="flow-node"><span class="flow-icon" data-icon="pipe" aria-hidden="true"></span><strong>Pipa</strong><small>Ke
+    tanaman</small></div></div></article></section><section
+    class="content-grid-2"><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Penyiraman Berikutnya</h2><p
+    class="panel-subtitle">Jadwal aktif terdekat</p></div></div><div
+    class="next-watering"><div
+    class="next-time" id="nextWateringTime">--:--</div><div><strong
+    id="nextWateringDuration">-- detik</strong><span
+    id="nextWateringInfo">Belum ada jadwal aktif</span></div></div></article><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Penyiraman Terakhir</h2><p
+    class="panel-subtitle">Aktivitas terakhir</p></div><a
+    class="text-link" href="riwayat.html">Lihat semua</a></div><div
+    class="last-activity" id="lastWateringActivity"><strong>Belum
+    ada aktivitas</strong><span>--</span></div></article></section></section></main></div><script
+    src="js/config.js"></script><script src="js/icons.js"></script><script
+    src="js/auth.js"></script><script
+    src="js/layout.js"></script><script
+    src="js/penyiraman.js"></script></body></html>

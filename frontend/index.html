@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Greenhouse IoT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+<aside class="sidebar">
+  <a class="logo-wrap" href="index.html">
+    <img src="assets/logo.svg" alt="Greenhouse IoT">
+  </a>
+
+  <nav class="nav-menu">
+    <a
+        class="nav-item active" href="index.html"><span class="nav-icon" data-icon="home" aria-hidden="true"></span><span>Dashboard</span></a><a
+        class="nav-item" href="monitoring.html"><span class="nav-icon" data-icon="chart" aria-hidden="true"></span><span>Monitoring</span></a><a
+        class="nav-item" href="penyiraman.html"><span class="nav-icon" data-icon="droplet" aria-hidden="true"></span><span>Penyiraman</span></a><a
+        class="nav-item" href="jadwal.html"><span class="nav-icon" data-icon="calendar" aria-hidden="true"></span><span>Jadwal</span></a><a
+        class="nav-item" href="riwayat.html"><span class="nav-icon" data-icon="history" aria-hidden="true"></span><span>Riwayat</span></a>
+  </nav>
+
+  <div class="system-status">
+    <h4>Status Sistem</h4>
+    <div class="status-line">
+      <span class="dot" id="sidebarStatusDot"></span>
+      <span id="sidebarDeviceStatus">Memeriksa...</span>
+    </div>
+    <div class="status-date">
+      <span class="nav-icon" data-icon="clock" aria-hidden="true"></span>
+      <div>
+        <strong
+        id="sidebarDate">--/--/----</strong><strong
+        id="sidebarClock">--:--:--</strong>
+      </div>
+    </div>
+  </div>
+</aside>
+<div class="sidebar-backdrop"></div>
+
+<main class="main">
+
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="menu-toggle" aria-label="Buka menu"><span data-icon="menu" aria-hidden="true"></span></button>
+    <div class="greeting">
+      <small>Selamat datang,</small>
+      <strong>Greenhouse IoT </strong>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    <div class="weather">
+      <span class="weather-icon" id="weatherIcon" data-weather-icon aria-hidden="true"></span>
+
+      <div>
+          <span id="weatherCondition">
+              Memuat cuaca...
+          </span>
+
+          <strong id="weatherTemperature">
+              --°C
+          </strong>
+      </div>
+  </div>
+    <div class="user-avatar">
+      <img src="assets/icon-user.svg" alt="User Avatar">
+  </div>
+  </div>
+</header>
+
+  <section class="content">
+    <div class="page-heading-row">
+      <h1 class="page-title">Dashboard</h1>
+      <span class="live-pill disconnected" id="dashboardConnectionPill">● TERPUTUS</span>
+    </div>
+
+    <section class="stats-grid">
+      <article class="metric-card">
+        <div class="metric-icon temp">
+          <img src="assets/icon-temperature.svg" alt="Suhu" width="48" height="48">
+        </div>
+        <div>
+          <div class="metric-label">Suhu</div>
+          <div class="metric-value" id="temperature">-- °C</div>
+          <span class="metric-badge" id=temperatureStatus>...</span>
+        </div>
+      </article>
+
+      <article class="metric-card">
+        <div class="metric-icon humidity">
+          <img src="assets/icon-humidity.svg" alt="Kelembapan" width="48" height="48">
+        </div>
+        <div>
+          <div class="metric-label">Kelembapan</div>
+          <div class="metric-value" id="humidity">-- %</div>
+          <span class="metric-badge" id="humidityStatus">...</span>
+        </div>
+      </article>
+
+      <article class="metric-card">
+        <div class="metric-icon light">
+          <img src="assets/icon-light.svg" alt="Cahaya" width="48" height="48">
+        </div>
+        <div>
+          <div class="metric-label">Cahaya</div>
+          <div class="metric-value" id="light">-- <span class="metric-unit">lux</span></div>
+          <span class="metric-badge" id="lightStatus">...</span>
+        </div>
+      </article>
+
+      <article class="metric-card">
+        <div class="metric-icon water">
+          <img src="assets/icon-water.svg" alt="Pipa mengalirkan air" width="48" height="48">
+        </div>
+        <div>
+          <div class="metric-label">Status Penyiraman</div>
+          <div class="metric-value" id="wateringStatus">OFF</div>
+          <span class="metric-badge off" id="wateringBadge">Nonaktif</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel">
+        <h2 class="panel-title">Grafik Perubahan 24 Jam Terakhir</h2>
+        <div class="chart-legend">
+          <span class="legend-item"><i class="legend-line legend-green"></i>Suhu</span>
+          <span class="legend-item"><i class="legend-line legend-blue"></i>Kelembapan</span>
+          <span class="legend-item"><i class="legend-line legend-orange"></i>Cahaya</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="environmentChart"></canvas>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2 class="panel-title">Informasi Sistem</h2>
+        <ul class="system-list">
+          <li><span data-icon="chip" aria-hidden="true"></span><span>Perangkat</span><span class="value">ESP32</span></li>
+          <li><span data-icon="leaf" aria-hidden="true"></span><span>Mode
+              Penyiraman</span><span
+              class="value" id="modeValue">Manual / Jadwal</span></li>
+          <li><span data-icon="clock" aria-hidden="true"></span><span>Terakhir
+              Update</span><span
+              class="value" id="updatedTime">16 Mei 2025 14:25</span></li>
+          <li><span data-icon="link" aria-hidden="true"></span><span>Koneksi</span><div class="connection-status">
+            <span
+                class="state-dot"
+                id="connectionDot"
+            ></span>
+        
+            <span
+                class="value"
+                id="connectionStatus"
+            >
+                Memeriksa...
+            </span>
+        </div></li>
+          <li><span data-icon="settings" aria-hidden="true"></span><span>Versi Sistem</span><span class="value">1.0.0</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel">
+        <h2 class="panel-title">Riwayat Penyiraman Terakhir</h2>
+        <div class="responsive-table">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Waktu</th>
+                <th>Durasi</th>
+                <th>Mode</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="info-card about-card">
+        <div class="image-wrapper">
+          <img src="assets/greenhouse-info.svg" alt="Greenhouse illustration">
+        </div>
+        <div>
+          <h3>Greenhouse IoT</h3>
+          <p>Sistem
+              monitoring dan kontrol greenhouse berbasis IoT untuk membantu perawatan tanaman secara otomatis dan efisien.</p>
+        </div>
+      </article>
+    </section>
+  </section>
+</main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

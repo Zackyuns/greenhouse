@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <defs>
+    <!-- Modern high-end gradients -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#52c285;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e6b45;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a7f3d0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2ece9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sophisticated glow -->
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Clean, Modern Icon Group -->
+  <g transform="translate(6, 6)">
+    <!-- Shield / Greenhouse Shell (Thin, sleek line) -->
+    <path d="M 24 4 L 41 15 L 41 38 C 41 43.5 24 47 24 47 C 24 47 7 43.5 7 38 L 7 15 Z" 
+          stroke="url(#primaryGrad)" stroke-width="2" stroke-linejoin="round" fill="none" opacity="0.8"/>
+    
+    <!-- Smart Leaf Shape -->
+    <!-- Center stem -->
+    <path d="M 24 44 L 24 16" stroke="url(#accentGrad)" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+    <!-- Left lobe -->
+    <path d="M 24 36 C 17 32 15 24 24 16" fill="url(#primaryGrad)" opacity="0.85"/>
+    <!-- Right lobe -->
+    <path d="M 24 36 C 31 32 33 24 24 16" fill="url(#accentGrad)" opacity="0.9"/>
+    
+    <!-- IoT Network Nodes & Links overlaid (connecting nature & tech) -->
+    <!-- Nodes -->
+    <circle cx="24" cy="16" r="3.5" fill="#ffffff" filter="url(#subtleGlow)"/>
+    <circle cx="24" cy="16" r="1.5" fill="#1e6b45"/>
+    
+    <circle cx="15" cy="27" r="2.5" fill="url(#iotGrad)"/>
+    <circle cx="33" cy="27" r="2.5" fill="url(#iotGrad)"/>
+    <circle cx="24" cy="38" r="2.5" fill="url(#iotGrad)"/>
+
+    <!-- Connection lines -->
+    <line x1="24" y1="16" x2="15" y2="27" stroke="url(#iotGrad)" stroke-width="1" stroke-dasharray="1 1.5"/>
+    <line x1="24" y1="16" x2="33" y2="27" stroke="url(#iotGrad)" stroke-width="1" stroke-dasharray="1 1.5"/>
+    <line x1="15" y1="27" x2="24" y2="38" stroke="url(#iotGrad)" stroke-width="1" stroke-dasharray="1 1.5"/>
+    <line x1="33" y1="27" x2="24" y2="38" stroke="url(#iotGrad)" stroke-width="1" stroke-dasharray="1 1.5"/>
+  </g>
+
+  <!-- Typography -->
+  <!-- "Greenhouse" -->
+  <text x="64" y="30" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.02em">
+    Greenhouse
+  </text>
+  <!-- "IoT" -->
+  <text x="189" y="30" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="800" fill="url(#iotGrad)" filter="url(#subtleGlow)" letter-spacing="0.02em">
+    IoT
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="64" y="44" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="600" fill="#a7f3d0" letter-spacing="0.18em" opacity="0.85">
+    SMART AGRICULTURE
+  </text>
+</svg>

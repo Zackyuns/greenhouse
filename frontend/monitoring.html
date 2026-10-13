@@ -1,0 +1,111 @@
+<!DOCTYPE
+    html><html
+    lang="id"><head><meta
+    charset="UTF-8"><meta
+    name="viewport" content="width=device-width, initial-scale=1.0"><title>Monitoring
+    | Greenhouse IoT</title><link
+    rel="stylesheet" href="css/style.css"></head><body><div
+    class="app-shell"><aside
+    class="sidebar">
+  <a class="logo-wrap" href="index.html"><img src="assets/logo.svg" alt="Greenhouse IoT"></a>
+  <nav class="nav-menu">
+    <a class="nav-item " href="index.html"><span class="nav-icon" data-icon="home" aria-hidden="true"></span><span>Dashboard</span></a>
+    <a
+        class="nav-item active" href="monitoring.html"><span class="nav-icon" data-icon="chart" aria-hidden="true"></span><span>Monitoring</span></a>
+    <a class="nav-item " href="penyiraman.html"><span class="nav-icon" data-icon="droplet" aria-hidden="true"></span><span>Penyiraman</span></a>
+    <a class="nav-item " href="jadwal.html"><span class="nav-icon" data-icon="calendar" aria-hidden="true"></span><span>Jadwal</span></a>
+    <a class="nav-item " href="riwayat.html"><span class="nav-icon" data-icon="history" aria-hidden="true"></span><span>Riwayat</span></a>
+  </nav>
+  <div class="system-status">
+    <h4>Status Sistem</h4>
+    <div class="status-line"><span class="dot" id="sidebarStatusDot"></span><span id="sidebarDeviceStatus">Memeriksa...</span></div>
+    <div
+        class="status-date"><span class="nav-icon" data-icon="clock" aria-hidden="true"></span><div><strong
+        id="sidebarDate">--/--/----</strong><strong
+        id="sidebarClock">--:--:--</strong></div></div>
+  </div>
+</aside>
+<div
+    class="sidebar-backdrop"></div><main
+    class="main"><header
+    class="topbar"><div
+    class="topbar-left"><button
+    class="menu-toggle" aria-label="Buka menu"><span data-icon="menu" aria-hidden="true"></span></button><div
+    class="greeting"><small>Monitoring
+    kondisi greenhouse</small><strong>Greenhouse
+    IoT</strong></div></div><div class="topbar-right">
+    <div class="weather">
+      <span class="weather-icon" id="weatherIcon" data-weather-icon aria-hidden="true"></span>
+      <div>
+        <span id="weatherCondition">Memuat cuaca...</span>
+        <strong id="weatherTemperature">--°C</strong>
+      </div>
+    </div>
+    <div class="user-avatar">
+      <img src="assets/icon-user.svg" alt="User Avatar">
+    </div>
+  </div></header><section
+    class="content"><div
+    class="page-heading-row"><div><h1
+    class="page-title">Monitoring</h1><p
+    class="page-subtitle">Pantau kondisi lingkungan greenhouse secara realtime.</p></div><span
+    class="live-pill disconnected" id="monitorConnectionPill">● TERPUTUS</span></div><section class="stats-grid"><article
+    class="metric-card"><div
+    class="metric-icon temp"><img
+    src="assets/icon-temperature.svg" alt="Suhu"></div><div><div
+    class="metric-label">Suhu Udara</div><div
+    class="metric-value" id="temperature">-- °C</div><span
+    class="metric-badge">DHT22</span></div></article><article
+    class="metric-card"><div
+    class="metric-icon humidity"><img
+    src="assets/icon-humidity.svg" alt="Kelembapan"></div><div><div
+    class="metric-label">Kelembapan</div><div
+    class="metric-value" id="humidity">-- %</div><span
+    class="metric-badge">DHT22</span></div></article><article
+    class="metric-card"><div
+    class="metric-icon light"><img
+    src="assets/icon-light.svg" alt="Cahaya"></div><div><div
+    class="metric-label">Intensitas Cahaya</div><div
+    class="metric-value" id="light">-- lux</div><span
+    class="metric-badge">BH1750</span></div></article><article class="metric-card"><div class="metric-icon water"><img src="assets/icon-water.svg" alt="Pipa mengalirkan air" width="48" height="48"></div><div><div class="metric-label">Status Penyiraman</div><div class="metric-value" id="wateringStatus">OFF</div><span class="metric-badge off" id="wateringBadge">Nonaktif</span></div></article></section><section
+    class="dashboard-grid"><article class="panel">
+      <h2 class="panel-title">Grafik Perubahan 24 Jam Terakhir</h2>
+      <div class="chart-legend">
+        <span class="legend-item"><i class="legend-line legend-green"></i>Suhu</span>
+        <span class="legend-item"><i class="legend-line legend-blue"></i>Kelembapan</span>
+        <span class="legend-item"><i class="legend-line legend-orange"></i>Cahaya</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="monitoringChart"></canvas>
+      </div>
+    </article><article
+    class="panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Informasi Sensor</h2><p
+    class="panel-subtitle">Detail perangkat monitoring</p></div></div><div
+    class="info-list"><div
+    class="info-row"><span>Sensor
+    suhu</span><strong>DHT22</strong></div><div
+    class="info-row"><span>Sensor
+    cahaya</span><strong>BH1750</strong></div><div
+    class="info-row"><span>Interval
+    data</span><strong>10
+    detik</strong></div><div
+    class="info-row"><span>Jaringan</span><strong
+    class="status-text" id="monitorConnection">Memeriksa...</strong></div><div
+    class="info-row"><span>Terakhir
+    diperbarui</span><strong
+    id="monitorUpdated">--</strong></div></div></article></section><article
+    class="panel full-panel"><div
+    class="panel-head"><div><h2
+    class="panel-title">Riwayat Sensor</h2><p
+    class="panel-subtitle">Pembacaan sensor terbaru dari database</p></div></div><div
+    class="responsive-table"><table
+    class="data-table"><thead><tr><th>Waktu</th><th>Suhu</th><th>Kelembapan</th><th>Cahaya</th></tr></thead><tbody
+    id="monitorHistory"><tr><td
+    colspan="4">Memuat data...</td></tr></tbody></table></div></article></section></main></div><script
+    src="https://cdn.jsdelivr.net/npm/chart.js"></script><script
+    src="js/config.js"></script><script src="js/icons.js"></script><script
+    src="js/auth.js"></script><script
+    src="js/layout.js"></script><script
+    src="js/monitoring.js"></script></body></html>

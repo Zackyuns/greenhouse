@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenhouseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#66BB6A;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:0.5" />
+    </linearGradient>
+    <linearGradient id="roofGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#81C784;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#66BB6A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A5D6A7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#81C784;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFF59D;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FFEE58;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FDD835;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect x="0" y="0" width="200" height="140" fill="url(#skyGradient)"/>
+
+  <!-- Sun -->
+  <circle cx="160" cy="30" r="18" fill="url(#sunGradient)" opacity="0.9"/>
+  <circle cx="160" cy="30" r="22" fill="#FFEB3B" opacity="0.2"/>
+
+  <!-- Clouds -->
+  <g opacity="0.6">
+    <ellipse cx="40" cy="35" rx="15" ry="8" fill="#ffffff"/>
+    <ellipse cx="50" cy="35" rx="12" ry="7" fill="#ffffff"/>
+    <ellipse cx="30" cy="37" rx="10" ry="6" fill="#ffffff"/>
+
+    <ellipse cx="140" cy="50" rx="12" ry="7" fill="#ffffff"/>
+    <ellipse cx="150" cy="48" rx="10" ry="6" fill="#ffffff"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="140" width="200" height="60" fill="url(#groundGradient)"/>
+
+  <!-- Grass details -->
+  <g stroke="#66BB6A" stroke-width="2" opacity="0.4" stroke-linecap="round">
+    <path d="M 20 140 L 20 135"/>
+    <path d="M 35 140 L 35 132"/>
+    <path d="M 50 140 L 50 136"/>
+    <path d="M 150 140 L 150 134"/>
+    <path d="M 165 140 L 165 137"/>
+    <path d="M 180 140 L 180 133"/>
+  </g>
+
+  <!-- Main Greenhouse Structure -->
+  <g transform="translate(100, 100)">
+    <!-- Glass panels with transparency -->
+    <path d="M -50 0 L -50 40 L 50 40 L 50 0 Z" fill="url(#greenhouseGradient)" stroke="#4CAF50" stroke-width="3" opacity="0.7"/>
+
+    <!-- Roof -->
+    <path d="M -55 0 L 0 -45 L 55 0" fill="url(#roofGradient)" stroke="#43A047" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Roof panels effect -->
+    <path d="M -35 -22 L 0 -45 L 35 -22" fill="none" stroke="#66BB6A" stroke-width="1.5" opacity="0.5"/>
+    <path d="M -15 -8 L 0 -45" stroke="#81C784" stroke-width="1" opacity="0.4"/>
+    <path d="M 15 -8 L 0 -45" stroke="#81C784" stroke-width="1" opacity="0.4"/>
+
+    <!-- Vertical support beams -->
+    <rect x="-52" y="0" width="3" height="40" fill="#2E7D32" opacity="0.8"/>
+    <rect x="49" y="0" width="3" height="40" fill="#2E7D32" opacity="0.8"/>
+    <rect x="-26" y="0" width="2" height="40" fill="#388E3C" opacity="0.6"/>
+    <rect x="24" y="0" width="2" height="40" fill="#388E3C" opacity="0.6"/>
+
+    <!-- Door -->
+    <g>
+      <rect x="-12" y="18" width="24" height="22" fill="#2E7D32" opacity="0.8" rx="2"/>
+      <rect x="-10" y="20" width="9" height="18" fill="#4CAF50" opacity="0.4" rx="1"/>
+      <rect x="1" y="20" width="9" height="18" fill="#4CAF50" opacity="0.4" rx="1"/>
+      <circle cx="8" cy="29" r="1.5" fill="#FFEB3B"/>
+    </g>
+
+    <!-- Windows -->
+    <g opacity="0.6">
+      <rect x="-42" y="8" width="15" height="12" fill="#E1F5FE" stroke="#4CAF50" stroke-width="1.5" rx="1"/>
+      <rect x="27" y="8" width="15" height="12" fill="#E1F5FE" stroke="#4CAF50" stroke-width="1.5" rx="1"/>
+      <line x1="-42" y1="14" x2="-27" y2="14" stroke="#4CAF50" stroke-width="1"/>
+      <line x1="-34.5" y1="8" x2="-34.5" y2="20" stroke="#4CAF50" stroke-width="1"/>
+      <line x1="27" y1="14" x2="42" y2="14" stroke="#4CAF50" stroke-width="1"/>
+      <line x1="34.5" y1="8" x2="34.5" y2="20" stroke="#4CAF50" stroke-width="1"/>
+    </g>
+
+    <!-- Plants inside -->
+    <g>
+      <!-- Left plant -->
+      <g transform="translate(-30, 35)">
+        <ellipse cx="0" cy="2" rx="8" ry="3" fill="#2E7D32" opacity="0.3"/>
+        <path d="M -5 0 Q -8 -5 -6 -10" stroke="#4CAF50" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M 0 0 Q 0 -8 0 -12" stroke="#388E3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 5 0 Q 8 -5 6 -10" stroke="#4CAF50" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="-4" cy="-8" r="3" fill="#66BB6A" opacity="0.8"/>
+        <circle cx="0" cy="-11" r="3.5" fill="#81C784" opacity="0.8"/>
+        <circle cx="4" cy="-8" r="3" fill="#66BB6A" opacity="0.8"/>
+      </g>
+
+      <!-- Right plant -->
+      <g transform="translate(30, 35)">
+        <ellipse cx="0" cy="2" rx="6" ry="2.5" fill="#2E7D32" opacity="0.3"/>
+        <path d="M -3 0 Q -5 -4 -4 -8" stroke="#4CAF50" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M 0 0 Q 0 -6 0 -10" stroke="#388E3C" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M 3 0 Q 5 -4 4 -8" stroke="#4CAF50" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="-3" cy="-6" r="2.5" fill="#66BB6A" opacity="0.8"/>
+        <circle cx="0" cy="-9" r="3" fill="#81C784" opacity="0.8"/>
+        <circle cx="3" cy="-6" r="2.5" fill="#66BB6A" opacity="0.8"/>
+      </g>
+
+      <!-- Center small plants -->
+      <g transform="translate(-10, 38)">
+        <circle cx="0" cy="0" r="2" fill="#81C784"/>
+        <path d="M -1 -2 Q -2 -4 -1 -5" stroke="#4CAF50" stroke-width="1" fill="none"/>
+        <path d="M 1 -2 Q 2 -4 1 -5" stroke="#4CAF50" stroke-width="1" fill="none"/>
+      </g>
+      <g transform="translate(10, 38)">
+        <circle cx="0" cy="0" r="2" fill="#81C784"/>
+        <path d="M -1 -2 Q -2 -4 -1 -5" stroke="#4CAF50" stroke-width="1" fill="none"/>
+        <path d="M 1 -2 Q 2 -4 1 -5" stroke="#4CAF50" stroke-width="1" fill="none"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- IoT Sensors indicators -->
+  <g opacity="0.7">
+    <!-- Temperature sensor -->
+    <circle cx="70" cy="80" r="4" fill="#FF5722"/>
+    <path d="M 68 76 L 72 76 L 72 80 Q 72 83 70 83 Q 68 83 68 80 Z" fill="#FF5722" opacity="0.8"/>
+
+    <!-- Humidity sensor -->
+    <circle cx="130" cy="85" r="3" fill="#2196F3"/>
+    <path d="M 130 82 Q 127 87 130 90 Q 133 87 130 82 Z" fill="#2196F3" opacity="0.8"/>
+
+    <!-- Signal waves -->
+    <g transform="translate(100, 55)" opacity="0.6">
+      <path d="M -8 0 Q -5 -3 -2 0" stroke="#4CAF50" stroke-width="1.5" fill="none"/>
+      <path d="M 2 0 Q 5 -3 8 0" stroke="#4CAF50" stroke-width="1.5" fill="none"/>
+      <circle cx="0" cy="0" r="2" fill="#66BB6A"/>
+    </g>
+  </g>
+</svg>
