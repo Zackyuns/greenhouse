@@ -1,7 +1,7 @@
 // Lokal: backend Express berjalan di port 3000.
 // Deployment: setelah backend berhasil dideploy, ganti URL di bawah dengan URL project backend Vercel.
 const LOCAL_API_URL = "http://localhost:3000/api";
-const DEPLOYED_BACKEND_URL = "https://greenhouseiotbackend.vercel.app";
+const DEPLOYED_BACKEND_URL = "https://greenhousebackend.vercel.app";
 const IS_LOCAL = ["localhost", "127.0.0.1"].includes(window.location.hostname) || window.location.protocol === "file:";
 const API_URL = IS_LOCAL
     ? LOCAL_API_URL
