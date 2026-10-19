@@ -10,8 +10,8 @@ exports.validateCreate = [
         .isFloat({ min: 0, max: 100 })
         .withMessage("Humidity harus antara 0 dan 100"),
     body("light_intensity")
-        .isFloat({ min: 0, max: 100 })
-        .withMessage("Light intensity harus antara 0 dan 100")
+        .isFloat({ min: 0, max: 100000 })
+        .withMessage("Light intensity harus antara 0 dan 100000")
 ];
 
 exports.create = async (req, res, next) => {

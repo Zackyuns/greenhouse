@@ -7,7 +7,7 @@ const DEVICE_TIMEOUT_SECONDS = 30;
 
 exports.status = async (req, res, next) => {
     try {
-        const [[sensorRow], [systemRows]] = await Promise.all([
+        const [sensorResult, systemResult] = await Promise.all([
             db.execute(
                 `SELECT
                     created_at,
@@ -23,6 +23,9 @@ exports.status = async (req, res, next) => {
                  LIMIT 1`
             )
         ]);
+
+        const sensorRow = sensorResult?.[0]?.[0] || null;
+        const systemRow = systemResult?.[0]?.[0] || null;
 
         const ageSeconds = sensorRow?.age_seconds == null
             ? null
@@ -41,7 +44,7 @@ exports.status = async (req, res, next) => {
                 connected,
                 deviceStatus: connected ? "online" : "offline",
                 lastUpdated: sensorRow?.created_at || null,
-                relayStatus: Boolean(systemRows?.[0]?.relay_status),
+                relayStatus: Boolean(systemRow?.relay_status),
                 ageSeconds
             }
         });
